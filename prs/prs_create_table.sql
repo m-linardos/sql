@@ -53,7 +53,7 @@ Create table purchaserequest (
     Total decimal(10,2) not null,
     SubmittedDate  datetime default current_timestamp not null,
     ReasonForRejection varchar(100),
-    IsActive Tinyint(1) not null,
+    IsActive Tinyint(1) default 1 not null,
     DateCreated datetime default current_timestamp not null,
     DateUpdated datetime default current_timestamp not null,
     UpdatedByUser int not null,
@@ -95,44 +95,37 @@ Create table purchaserequestlineitem (
     );     
    
    
-CREATE USER sdb_user@localhost IDENTIFIED BY 'sesame';
-	GRANT SELECT, INSERT, DELETE, UPDATE ON sdb.* TO sdb_user@localhost;
+   -- Table #1 user Insert  
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (10235, 'adubanowski', '1kelp41', 'Amy', 'Dubanowski', '513-754-3461', 'amy.dubanowski@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10235);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (25641, 'jsimms', 'Haa!yX', 'Jonah', 'Simms', '513-655-9173', 'jonah.simms@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 36841);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (10653, 'dfox', '$~!e124', 'Dina', 'Fox', '343-346-9713', 'dina.fox@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 36841);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (26484, 'gmcneil', '8252$rt', 'Garrett', 'McNeil', '515-645-3146', 'garrett.mcneil@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10653);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (45564, 'cthompson', '$H@ppee', 'Cheyenne', 'Thompson', '643-357-9146', 'cheyenne.thompson@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10235);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (36841, 'gsturgis', '34724t', 'Glenn', 'Sturgis', '937-363-5828', 'glenn.sturgis@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10653);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (27648, 'bthompson', '$~1294', 'Bilbo', 'Thompson', '643-919-6431', 'bilbo.thompson@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10653);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (36858, 'maquinoliwanag', '3142po$@!', 'Mateo Fernando', 'Aquino Liwanag', '515-645-3146', 'mateo.aquinoliwanag@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10653);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (24755, 'skaluiokalani', 'Iluvrry@', 'Sandra', 'Kaluiokalani', '342-645-7984', 'sandra.kaluiokalani@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10653);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (36671, 'tstaskiewicz', 'rIfarm@', 'Tate', 'Staskiewicz', '937-171-3491', 'tate.staskiewicz@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10235);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (26479, 'mvartanian', 'Wise$$@', 'Myrtle', 'Vartanian', '364-645-1793', 'myrtle.vartanian@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 36841);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (13858, 'mwhite', '36et!lk', 'Marcus', 'White', '313-695-4613', 'marcus.white@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 36841);
+Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (23749, 'skazlauskas', '3melis42', 'Sal', 'Kazlauskas', '656-252-3175', 'sal.kazlauskas@Cloud9.com', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 10235);
 
--- Table #1 Insert  -->  Datetime getting error
-Insert User (ID, UserName, Password, Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (10235, 'adubanowski', '1kelp341', 'Amy', 'Dubanowski', '513-754-3461', 'amy.dubanowski@Cloud9.com', 1, 0, 1, 2004-06-25 12:12:56, 2015-12-26 23:50:30, 10235);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (25641, 'jsimms', 'Haa!yreX', 'Jonah', 'Simms', '513-655-9173', 'jonah.simms@Cloud9.com', 0, 0, 1, , 2014-04-24 08:05:32, 2018-03-27 11:45:12, 36841);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (10653, 'dfox', '$~!e1294', 'Dina', 'Fox', '343-346-9713', 'dina.fox@Cloud9.com', 0, 1, 1, 2016-06-10 17:15:58, 2019-03-15 16:32:01, 36841);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (26484, 'gmcneil', '825642$rest', 'Garrett', 'McNeil', '515-645-3146', 'garrett.mcneil@Cloud9.com', 0, 0, 1, 2008-07-21 15:32:45, 10653);
+ -- Table #2 vendor Insert
+Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (100024, '101', 'Staples', '342 Happy Valley Rd.', 'Mason', 'OH', '45013', '512-313-1596', 'order@staples.com', default, default, default, default, 10653);
+Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (100021, '075', 'Joes Pencil Shop', '354162 Commerce Way', 'Liberty', 'MI', '31546', '525-645-9696', 'joe@joespencilshop.com', default, default, default, default,  10653);
+Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (100998, '125', ' Office Mart', '32654 Pete Rose Way', 'Cincinnati', 'OH', '45013', '513-896-3032', 'placeorder@officemart.com', default, default, default, default, 10653);
+Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (090456, '232', 'Furniture Frenzy', '23 Frenzy st.', 'Woohoo', 'PA', '63652', '313-969-5641', 'jlawson@furniturefrenzy.com', default, default, default, default, 10235);
+Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (091185, '022', 'Ur Snow Removal', '252 Sunny Acre Rd.', 'Simmons', 'IN', '52546', '545-943-8246', 'butch@Ursnowremoval.com', default, default, default, default, 10235);
+Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (073521, '275', 'Office Depot', '32654 Pete Rose Way', 'Cincinnati', 'OH', '45013', '513-896-3032', 'placeorder@officemart.com', default, default, default, default, 36841);
+Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (100648, '145', 'Cute Creations', '32 Winding Rd.', 'Dragons Pitt', 'IN', '36412', '656-225-3353', 'bunny@cutecreations.com', default, default, default, default, 10235);
+ 
 
---Finish dates
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (45564, 'cthompson', '$$!H@ppee', 'Cheyenne', 'Thompson', '643-357-9146', 'cheyenne.thompson@Cloud9.com', 0, 0, 1, 10235);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (36841, 'gsturgis', '347245left', 'Glenn', 'Sturgis', '937-363-5828', 'glenn.sturgis@Cloud9.com', 1, 1, 1, 10653);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (27648, 'bthompson', '$~!e1294', 'Bilbo', 'Thompson', '643-919-6431', 'bilbo.thompson@Cloud9.com', 0, 0, 0, 10653);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (36858, 'maquinoliwanag', '3142pony$@!', 'Mateo Fernando', 'Aquino Liwanag', '515-645-3146', 'mateo.aquinoliwanag@Cloud9.com', 0, 0, 1, 10653);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (24755, 'skaluiokalani', 'IluvJerry@', 'Sandra', 'Kaluiokalani', '342-645-7984', 'sandra.kaluiokalani@Cloud9.com', 0, 0, 1, 10653);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (36671, 'tstaskiewicz', 'rudfarm@', 'Tate', 'Staskiewicz', '937-171-3491', 'tate.staskiewicz@Cloud9.com', 0, 1, 1, 10235);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (26479, 'mvartanian', 'Wise$$@', 'Myrtle', 'Vartanian', '364-645-1793', 'myrtle.vartanian@Cloud9.com', 0, 0, 0, 36841);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (13858, 'mwhite', '3631slet!lk', 'Marcus', 'White', '313-695-4613', 'marcus.white@Cloud9.com', 0, 0, 1, 36841);
-Insert User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (23749, 'skazlauskas', '3melishy145142', 'Sal', 'Kazlauskas', '656-252-3175', 'sal.kazlauskas@Cloud9.com', 0, 0, 0, 10235);
-
-
--- Table #2 Insert
-Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (1024, 'Staples', '342 Happy Valley Rd.', 'Mason', 'OH', '45013', '512-313-1596', 'order@staples.com', 1, 1, 10653);
-Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (0021, 'Joes Pencil Shop', '354162 Commerce Way', 'Liberty', 'MI', '31546', '525-645-9696', 'joe@joespencilshop.com', 0, 0, 10653);
-Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (0998, 'Office Mart', '32654 Pete Rose Way', 'Cincinnati', 'OH', '45013', '513-896-3032', 'placeorder@officemart.com', 1, 1, 10653);
-Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (0456, 'Furniture Frenzy', '23 Frenzy st.', 'Woohoo', 'PA', '63652', '313-969-5641', 'jlawson@furniturefrenzy.com', 0, 0, 10235);
-Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (1185, 'Ur Snow Removal', '252 Sunny Acre Rd.', 'Simmons', 'IN', '52546', '545-943-8246', 'butch@Ursnowremoval.com', 0, 1, 10235);
-Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (3521, 'Office Mart', '32654 Pete Rose Way', 'Cincinnati', 'OH', '45013', '513-896-3032', 'placeorder@officemart.com', 1, 1, 36841);
-Insert vendor (ID, Code, Name, Address, City, State, Zip, PhoneNumber, Email, IsPreApproved, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (0998, 'Cute Creations', '32 Winding Rd.', 'Dragons Pitt', 'IN', '36412', '656-225-3353', 'bunny@cutecreations.com', 1, 0, 10235);
-
-
--- Table #4 Insert
-Insert product values (63632, 
+-- Table #4 product Insert
+Insert product (ID, VendorID, PartNumber, Name, Price, Unit, PhotoPath, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (100324, 073521, '3654UE1', 'Earphones', 5.99, '12', null, default, default, default, 10235);
+Insert product (ID, VendorID, PartNumber, Name, Price, Unit, PhotoPath, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (364578, 100024, '253649', 'No. 2 Pencil', 1.00, '8', null, default, default, default, 10235);
+Insert product (ID, VendorID, PartNumber, Name, Price, Unit, PhotoPath, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (031485, 100648, '306', 'Blue Table Runner', 16.50, '1', 'https://wwww.crutecreations.com/tablerunnerblue', default, default, default, 10653);
+Insert product (ID, VendorID, PartNumber, Name, Price, Unit, PhotoPath, IsActive, DateCreated, DateUpdated, UpdatedByUser) Values (053461, 091185, '306', 'Snow Removal', 150.00, null, null, default, default, default, 36841);
 
 
-
--- Table #3 Insert / transactional
-Insert  purchaserequest (ID, UserID, Description, DateNeeded, DeliveryMode, Status, Total, SubmittedDate, ReasonForRejection, IsActive, UpdatedByUser) values (31365, 36841, 'desk chair', 'My desk chair is broken', 2017-07-03, 'UPS', 'Approved', 123.98, 2017-06-21, null, 0, 10235),
-Insert  purchaserequest (ID, UserID, Description, DateNeeded, DeliveryMode, Status, Total, SubmittedDate, ReasonForRejection, IsActive, UpdatedByUser) values (25631, 36841, 'nail polish remover', 'Remove nail polish', 2016-12-15, 'Instacart', 'Not Approved', 2.89, 2016-12-21, 'Unneccesary to perform job.', 0, 10653),
-Insert  purchaserequest (ID, UserID, Description, DateNeeded, DeliveryMode, Status, Total, SubmittedDate, ReasonForRejection, IsActive, UpdatedByUser) values (35614, 10653, 'Baby Changing Station', 'Baby Changing Station in family restroom is broken.', 2018-02-14, 'UPS', 'Approved', 315.25, 2018-02-04, null, 0, 10235),
-Insert  purchaserequest (ID, UserID, Description, DateNeeded, DeliveryMode, Status, Total, SubmittedDate, ReasonForRejection, IsActive, UpdatedByUser) values (10654, 36841, 'Plane ticket to Jamaica', 'I am tired of working and want to go to Jamaica', 2019-04-30, 'US Mail', 'Denied', 123.98, 2019-06-21, null, 1, 10235),
+CREATE USER prs_user@localhost IDENTIFIED BY 'happydays';
+	GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;
